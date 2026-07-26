@@ -1,283 +1,229 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Jemmanuel Que | Portfolio</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jemmanuel Que | Full-Stack Developer</title>
 
-<!-- Fonts & Icons -->
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-<link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-<style>
-:root {
-  --navy: #001d3d;
-  --light-navy: #003566;
-  --accent: #ffc300;
-  --white: #ffffff;
-}
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
-/* Body */
-body {
-  font-family: 'Poppins', sans-serif;
-  background-color: var(--navy);
-  color: var(--white);
-  overflow-x: hidden;
-  line-height: 1.6;
-}
-
-/* Navbar */
-.navbar {
-  background-color: var(--navy);
-  border-bottom: 1px solid rgba(255,255,255,0.1);
-  padding: 1rem 0;
-}
-.navbar .nav-link {
-  color: var(--white) !important;
-  margin: 0 15px;
-  position: relative;
-  font-weight: 500;
-  transition: color 0.3s;
-}
-.navbar .nav-link::after {
-  content: '';
-  position: absolute;
-  width: 0;
-  height: 2px;
-  bottom: 0;
-  left: 0;
-  background-color: var(--white);
-  transition: width 0.3s ease-in-out;
-}
-.navbar .nav-link:hover::after { width: 100%; }
-.navbar .nav-link:hover { color: var(--accent); }
-
-/* Hero */
-.hero-section {
-  padding: 120px 0;
-  text-align: center;
-}
-.me-img {
-  width: 200px;
-  height: 200px;
-  border-radius: 50%;
-  border: 4px solid var(--white);
-  object-fit: cover;
-  margin-bottom: 20px;
-  transition: transform 0.3s ease;
-}
-.me-img:hover { transform: scale(1.05); }
-.hero-title { font-weight: 700; font-size: 2.5rem; }
-.hero-subtitle { font-weight: 400; font-size: 1.25rem; opacity: 0.85; }
-.hero-typed { color: var(--accent); font-weight:600; }
-
-/* Section Titles */
-section h2 {
-  font-weight: 600;
-  margin-bottom: 40px;
-  display: inline-block;
-  position: relative;
-}
-section h2::after {
-  content: '';
-  display: block;
-  width: 50%;
-  height: 3px;
-  background: var(--accent);
-  margin-top: 5px;
-}
-
-/* Projects */
-.project-card {
-  background: var(--light-navy);
-  border-radius: 15px;
-  overflow: hidden;
-  margin-bottom: 30px;
-  transition: transform 0.3s ease;
-}
-.project-card:hover { transform: translateY(-10px); }
-.project-img-container { overflow: hidden; position: relative; }
-.project-img {
-  width: 100%;
-  height: 250px;
-  object-fit: cover;
-  transition: transform 0.5s ease, filter 0.5s ease;
-}
-.project-card:hover .project-img { transform: scale(1.1); filter: brightness(70%); }
-.project-body { padding: 20px; }
-
-/* Skills/Hobbies */
-.skill-icon { font-size: 2.5rem; margin-bottom: 15px; color: var(--accent); }
-.hobby-card {
-  padding: 20px;
-  border-left: 3px solid var(--white);
-  background: rgba(255,255,255,0.05);
-  height: 100%;
-  transition: transform 0.3s;
-}
-.hobby-card:hover { transform: translateY(-10px); }
-
-/* Footer */
-footer {
-  padding: 50px 0;
-  border-top: 1px solid rgba(255,255,255,0.1);
-  text-align: center;
-}
-footer .social-link {
-  color: var(--white);
-  font-size: 1.5rem;
-  margin: 0 10px;
-  transition: color 0.3s;
-}
-footer .social-link:hover { color: var(--accent); }
-
-/* About Me Box */
-.about-box {
-  background: var(--light-navy);
-  padding: 40px;
-  border-radius: 15px;
-  margin-bottom: 60px;
-  line-height:1.8;
-}
-</style>
+    <!-- Custom CSS -->
+    <link href="style.css" rel="stylesheet" type="text/css">
 </head>
-
 <body>
 
-<!-- Navbar -->
-<nav class="navbar navbar-expand-lg navbar-dark sticky-top">
-  <div class="container">
-    <a class="navbar-brand fw-bold" href="#">JCQ.</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNav">
-      <div class="navbar-nav ms-auto">
-        <a class="nav-link" href="#home">Home</a>
-        <a class="nav-link" href="#projects">Projects</a>
-        <a class="nav-link" href="#skills">Experience</a>
-        <a class="nav-link" href="#contact">Contact</a>
-      </div>
-    </div>
-  </div>
-</nav>
+    <!-- Primary Navigation -->
+    <header class="site-header" id="site-header">
+        <div class="container site-header-inner">
+            <a class="brand" href="#about" aria-label="Jemmanuel Que home">
+                <span class="brand-mark">JQ</span>
+                <span class="brand-name">Jemmanuel Que</span>
+            </a>
 
-<!-- Hero -->
-<section id="home" class="hero-section container" data-aos="fade-up">
-  <img class="me-img" src="pics/me.jpg" alt="Jemmanuel Que">
-  <h1 class="hero-title">Jemmanuel Cyril D. Que</h1>
-  <p class="hero-subtitle">Full-Stack Developer | BSIT Student | Musician</p>
-  <p class="mx-auto" style="max-width:600px; opacity:0.85;">
-    I specialize in PHP, MySQL, and Bootstrap. I build scalable, user-focused digital solutions.
-  </p>
-  <p class="hero-typed" id="typed"></p>
-</section>
-
-<!-- Projects -->
-<section id="projects" class="container py-5">
-  <h2 data-aos="fade-right">Featured Projects</h2>
-  <div class="row g-4">
-    <div class="col-md-6" data-aos="zoom-in">
-      <div class="project-card">
-        <div class="project-img-container">
-          <img src="pics/ims.png" class="project-img" alt="IMS">
+            <nav class="site-nav" aria-label="Primary Navigation">
+                <a href="#about" class="nav-link active">About</a>
+                <a href="#work" class="nav-link">Projects</a>
+                <a href="#interests" class="nav-link">Interests</a>
+                <a href="#contact" class="nav-link">Contact</a>
+            </nav>
         </div>
-        <div class="project-body">
-          <h5>Inventory Management System</h5>
-          <p class="small opacity-75">Software Engineering Project • CPanel</p>
-          <p>Custom solution for crayfish business with real-time stock tracking and reporting.</p>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="about">
+        <div class="container hero-grid">
+            <div class="hero-copy">
+                <h1 class="hero-title">Hi! I'm <span class="highlight"> Jemmanuel Cyril Que</span></h1>
+                <div class="hero-role-wrapper">
+                    <span class="role-prefix">&gt; </span>
+                    <span id="typewriter" class="typewriter-text"></span>
+                    <span class="cursor">|</span>
+                </div>
+                <p class="hero-summary">
+                    I build robust web systems using PHP, MySQL, Bootstrap, and AWS infrastructure—transforming complex operational needs into scalable digital tools.
+                </p>
+
+                <div class="hero-actions">
+                    <a href="#work" class="cta-btn primary-btn"><i class="fa-solid fa-briefcase"></i> View Projects</a>
+                    <a href="mailto:jc.saxophonist0629@gmail.com" class="cta-btn secondary-btn"><i class="fa-regular fa-envelope"></i> Get In Touch</a>
+                </div>
+            </div>
+
+            <div class="hero-visual">
+                <div class="profile-frame">
+                    <img src="me.png" alt="Jemmanuel Que - Full-Stack Developer" class="profile-img">
+                </div>
+            </div>
         </div>
-      </div>
-    </div>
-    <div class="col-md-6" data-aos="zoom-in" data-aos-delay="200">
-      <div class="project-card">
-        <div class="project-img-container">
-          <img src="pics/hris.png" class="project-img" alt="HRIS">
+    </section>
+
+    <!-- Featured Projects Section -->
+    <section class="section container" id="work">
+        <div class="section-header">
+            <span class="eyebrow">Projects</span>
+            <h2 class="section-title">"Tailored strategies for your business."</h2>
         </div>
-        <div class="project-body">
-          <h5>HRIS with Facial Recognition & GPS</h5>
-          <p class="small opacity-75">Capstone Project • AWS EC2 </p>
-          <p>Streamlined a security agency company paperworks, attendance, and payroll processes.</p>
+
+        <div class="projects-container">
+            <!-- Project 1 -->
+            <article class="project-card">
+                <div class="card-image-wrapper">
+                    <img src="inventory.png" alt="Inventory Management System interface screenshot" loading="lazy">
+                </div>
+                <div class="project-info">
+                    <div class="tech-tags">
+                        <span class="tech-tag">PHP</span>
+                        <span class="tech-tag">MySQL</span>
+                        <span class="tech-tag">Bootstrap</span>
+                        <span class="tech-tag">cPanel</span>
+                    </div>
+                    <h3>Inventory Management System - Software Engineering Project</h3>
+                    <p>Streamlined asset tracking, automated stock alerts, and real-time reporting tailored for my college professor's aquaculture operations.</p>
+                </div>
+            </article>
+
+            <!-- Project 2 -->
+            <article class="project-card">
+                <div class="card-image-wrapper">
+                    <img src="hris.jpg" alt="Human Resource Information System dashboard interface" loading="lazy">
+                </div>
+                <div class="project-info">
+                    <div class="tech-tags">
+                        <span class="tech-tag">PHP</span>
+                        <span class="tech-tag">MySQL</span>
+                        <span class="tech-tag">face-api.js</span>
+                        <span class="tech-tag">GPS Geofencing</span>
+                        <span class="tech-tag">AWS EC2</span>
+                    </div>
+                    <h3>Human Resource Information System - Capstone Project (Thesis)</h3>
+                    <p>Enterprise HRIS featuring facial recognition attendance verification using face-api.js, live GPS field tracking, and cloud deployment for Green Meadows Security Agency.</p>
+                </div>
+            </article>
         </div>
-      </div>
-    </div>
-  </div>
-</section>
+    </section>
 
-<!-- Skills / Hobbies -->
-<section id="skills" class="container py-5">
-  <h2 data-aos="fade-right">Beyond the Code</h2>
-  <div class="row g-4">
-    <div class="col-md-3" data-aos="fade-up">
-      <div class="hobby-card">
-        <i class="fa-solid fa-music skill-icon"></i>
-        <h5>Saxophone</h5>
-        <p class="small">6 years of experience. Played in wedding, school events, and battle of the bands.</p>
-      </div>
-    </div>
-    <div class="col-md-3" data-aos="fade-up" data-aos-delay="100">
-      <div class="hobby-card">
-        <i class="fa-solid fa-baseball-ball skill-icon"></i>
-        <h5>Sports</h5>
-        <p class="small">Badminton varsity player and Tennis enthusiast. Competitive & disciplined.</p>
-      </div>
-    </div>
-    <div class="col-md-3" data-aos="fade-up" data-aos-delay="200">
-      <div class="hobby-card">
-        <i class="fa-solid fa-motorcycle skill-icon"></i>
-        <h5>Riding</h5>
-        <p class="small">Enthusiastic rider of Honda Click 150I. Passionate about mechanical efficiency.</p>
-      </div>
-    </div>
-    <div class="col-md-3" data-aos="fade-up" data-aos-delay="300">
-      <div class="hobby-card">
-        <i class="fa-solid fa-gamepad skill-icon"></i>
-        <h5>Persona & RPGs</h5>
-        <p class="small">Drawn to narrative-driven games and strategic anime like One Outs.</p>
-      </div>
-    </div>
-  </div>
-</section>
+    <!-- Beyond The Code Section -->
+    <section class="section container" id="interests">
+        <div class="section-header">
+            <span class="eyebrow">Passions & Pursuits</span>
+            <h2 class="section-title">Beyond the Code</h2>
+        </div>
 
-<!-- About Me -->
-<section class="container py-5" data-aos="fade-up">
-  <div class="about-box">
-    <h3>About Me</h3>
-    <p>INTJ personality type with a strategic mindset. I enjoy complex problem-solving—whether debugging PHP or staying two steps ahead in a game of strategy. Based in Calamba, I am ready to bring tech-driven solutions to life.</p>
-  </div>
-</section>
+        <div class="timeline">
+            <!-- Item 1: Saxophone -->
+            <div class="timeline-item slide-left">
+                <div class="timeline-media">
+                    <img src="saxophone.jpg" alt="Saxophone Performance" loading="lazy">
+                </div>
+                <div class="timeline-content">
+                    <span class="badge"><i class="fa-solid fa-music"></i> Music & Artistry</span>
+                    <h3>Saxophonist (Alto & Soprano)</h3>
+                    <p>7+ years of live musical performance experience, with performances at weddings, private events, and Battle of the Bands competitions.</p>
+                </div>
+            </div>
 
-<!-- Footer / Contact -->
-<footer id="contact">
-  <div class="container" data-aos="fade-up">
-    <h2>Get In Touch</h2>
-    <p>jc.saxophonist0629@gmail.com</p>
-    <div class="mt-4">
-      <a href="https://www.facebook.com/jc.que.29" class="social-link"><i class="fa-brands fa-facebook"></i></a>
-      <a href="https://www.instagram.com/jemmanuel_que/" class="social-link"><i class="fa-brands fa-instagram"></i></a>
-      <a href="mailto:jc.saxophonist0629@gmail.com" class="social-link"><i class="fa-solid fa-envelope"></i></a>
+            <!-- Item 2: Tennis -->
+            <div class="timeline-item slide-right">
+                <div class="timeline-media">
+                    <img src="tennis.png" alt="Tennis Action" loading="lazy">
+                </div>
+                <div class="timeline-content">
+                    <span class="badge"><i class="fa-solid fa-baseball"></i> Athletics</span>
+                    <h3>Tennis Player</h3>
+                    <p>Played competitive tennis from Grade 6 to Grade 8, developing tactical awareness, court agility, discipline, and strategic decision-making through training and match play.</p>
+                </div>
+            </div>
+
+            <!-- Item 3: Badminton -->
+            <div class="timeline-item slide-left">
+                <div class="timeline-media">
+                    <img src="badminton.jpg" alt="Badminton Varsity Action" loading="lazy">
+                </div>
+                <div class="timeline-content">
+                    <span class="badge"><i class="fa-solid fa-trophy"></i> Varsity Athletics</span>
+                    <h3>Badminton Varsity Athlete</h3>
+                    <p>Represented Mary Help of Christians College in varsity badminton from Grade 8 to Grade 10, developing quick reflexes, strategic decision-making, composure under pressure, and strong teamwork through competitive play.</p>
+                </div>
+            </div>
+
+            <!-- Item 4: Motoring -->
+            <div class="timeline-item slide-right">
+                <div class="timeline-media">
+                    <img src="motor_car.png" alt="Motorcycle Maintenance and Motoring" loading="lazy">
+                </div>
+                <div class="timeline-content">
+                    <span class="badge"><i class="fa-solid fa-wrench"></i> Mobility & Mechanics</span>
+                    <h3>Riding & Driving Enthusiast</h3>
+                    <p>4 years of experience driving motorcycles and cars, developing strong road awareness, responsible driving habits, and confidence behind the wheel.</p>
+                </div>
+            </div>
+        </div>
+
+    <div class="personal-snapshot-card">
+    <div class="snapshot-header">
+        <i class="fa-solid fa-user-gear snapshot-icon"></i>
+        <h3>More About Me</h3>
     </div>
-    <p class="mt-5 small opacity-50">&copy; 2026 Jemmanuel Que. Built with Passion.</p>
-  </div>
-</footer>
+    
+    <!-- Optional Quote Banner -->
+    <blockquote class="snapshot-quote">
+        "What is earned reshapes what is required."
+    </blockquote>
 
-<!-- Scripts -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
-<script>
-  // Scroll Animations
-  AOS.init({ duration: 1000, once: true });
+    <ul class="snapshot-list">
+        <li>
+            <i class="fa-solid fa-brain"></i> 
+            <span><strong>Personality:</strong> INTJ 9w1 (Strategic, methodical, & composed)</span>
+        </li>
+        <li>
+            <i class="fa-solid fa-certificate"></i> 
+            <span><strong>Credential:</strong> Civil Service Professional Passer (84.21% Rating)</span>
+        </li>
+        <li>
+            <i class="fa-solid fa-dog"></i> 
+            <span><strong>Dog Enthusiast:</strong> Golden Retriever, Pomeranian, Shih Tzu & Chow Chow</span>
+        </li>
+        <li>
+            <i class="fa-solid fa-headphones"></i> 
+            <span><strong>Music & Vibe:</strong> Smooth Jazz, J-Pop, R&B, Neo Soul.</span>
+        </li>
+    </ul>
+</div>
+    </section>
 
-  // Typed Animation
-  const typed = new Typed('#typed', {
-    strings: ['Full-Stack Web Developer', 'PHP & MySQL Expert', 'UI/UX Enthusiast'],
-    typeSpeed: 50,
-    backSpeed: 25,
-    loop: true
-  });
-</script>
+    
+
+    <!-- Call to Action Banner -->
+    <section class="cta-banner">
+        <div class="container">
+            <span class="eyebrow light">Let's Connect</span>
+            <h2>Transforming operational challenges into automated, reliable software.</h2>
+            <p>Facing technical bottlenecks or launching a new web platform? Let's engineer a solution together.</p>
+            <a href="mailto:jc.saxophonist0629@gmail.com" class="cta-btn primary-btn"><i class="fa-solid fa-paper-plane"></i> Get In Touch</a>
+        </div>
+    </section>
+
+    <!-- Footer / Contact Section -->
+    <footer class="contact-section container" id="contact">
+        <h3>Connect With Me</h3>
+        <div class="social-links">
+            <a href="https://github.com/Jemmanuel-Que-629/" target="_blank" rel="noopener" aria-label="GitHub"><i class="fab fa-github"></i></a>
+            <a href="https://www.linkedin.com/in/jemmanuel-cyril-que-a85440387/" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+            <a href="https://www.facebook.com/jc.que.29" target="_blank" rel="noopener" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://www.instagram.com/jemmanuel_que/" target="_blank" rel="noopener" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.upwork.com/freelancers/~01d7bfe6242fd70725" target="_blank" rel="noopener" aria-label="Upwork"><i class="fab fa-upwork"></i></a>
+        </div>
+        <p class="contact-email">jc.saxophonist0629@gmail.com</p>
+        <p class="copyright">&copy; 2026 Jemmanuel Que. Built with purpose and precision.</p>
+    </footer>
+
+    <!-- Custom Script -->
+    <script src="script.js"></script>
 </body>
 </html>

@@ -1,0 +1,736 @@
+/* ==========================================================================
+   Variables & Theme Setup
+   ========================================================================== */
+:root {
+    --bg-dark: #08111f;
+    --bg-card: #0f1c33;
+    --bg-card-hover: #162746;
+    --primary-blue: #1d3b6e;
+    --royal-accent: #3b82f6;
+    --gold-accent: #d4af37;
+    --gold-light: #f5e4a3;
+    --text-light: #f6f8fc;
+    --text-muted: #94a3b8;
+    --border-color: rgba(212, 175, 55, 0.16);
+    --border-glow: rgba(212, 175, 55, 0.35);
+    
+    --font-heading: 'Cormorant Garamond', serif;
+    --font-body: 'Plus Jakarta Sans', sans-serif;
+    
+    --header-height: 72px;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: var(--header-height);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--bg-dark);
+    color: var(--text-light);
+    font-family: var(--font-body);
+    line-height: 1.7;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+.hero-role-wrapper {
+    font-size: 1.25rem;
+    font-family: var(--font-body);
+    color: var(--text-muted);
+    margin-top: 0.5rem;
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-weight: 500;
+}
+
+.role-prefix {
+    color: #c5a059; /* Matching your gold tone */
+    font-weight: 700;
+}
+
+.typewriter-text {
+    color: var(--text-light);
+    font-weight: 600;
+}
+
+.cursor {
+    color: #c5a059;
+    font-weight: 700;
+    animation: blink 0.8s infinite;
+}
+
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+}
+
+/* ==========================================================================
+   Layout Containers & Headers
+   ========================================================================== */
+.container {
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: 4.5rem 1.5rem;
+}
+
+.site-header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    height: var(--header-height);
+    background: rgba(8, 17, 31, 0.88);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    border-bottom: 1px solid rgba(212, 175, 55, 0.1);
+    transition: box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.site-header.scrolled {
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    border-bottom-color: rgba(212, 175, 55, 0.22);
+}
+
+.site-header-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 100%;
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+.brand {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.8rem;
+    font-weight: 700;
+}
+
+.brand-mark {
+    width: 2.2rem;
+    height: 2.2rem;
+    border-radius: 0.6rem;
+    background: linear-gradient(135deg, var(--primary-blue), var(--royal-accent));
+    color: #fff;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.88rem;
+    font-weight: 700;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.brand-name {
+    font-size: 1.05rem;
+    letter-spacing: -0.01em;
+}
+
+.site-nav {
+    display: flex;
+    align-items: center;
+    gap: 1.8rem;
+}
+
+.site-nav .nav-link {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    font-weight: 500;
+    position: relative;
+    padding: 0.3rem 0;
+    transition: color 0.25s ease;
+}
+
+.site-nav .nav-link:hover,
+.site-nav .nav-link.active {
+    color: var(--gold-accent);
+}
+
+.site-nav .nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0%;
+    height: 2px;
+    background-color: var(--gold-accent);
+    transition: width 0.25s ease;
+}
+
+.site-nav .nav-link:hover::after,
+.site-nav .nav-link.active::after {
+    width: 100%;
+}
+
+/* ==========================================================================
+   Typography Rules
+   ========================================================================== */
+h1, h2, h3 {
+    font-family: var(--font-heading);
+    letter-spacing: 0.5px;
+    line-height: 1.2;
+}
+
+.eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.82rem;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    color: var(--gold-accent);
+    margin-bottom: 0.8rem;
+    font-weight: 600;
+}
+
+.section-header {
+    margin-bottom: 3rem;
+}
+
+.section-title {
+    font-size: clamp(2rem, 3.5vw, 2.8rem);
+    color: var(--text-light);
+}
+
+.highlight {
+    background: linear-gradient(135deg, #bf953f 0%, #fcf6ba 25%, #b38728 50%, #fbf5b7 75%, #aa771c 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-fill-color: transparent;
+    filter: drop-shadow(0 2px 8px rgba(191, 149, 63, 0.2));
+}
+
+/* ==========================================================================
+   Hero Section
+   ========================================================================== */
+.hero {
+    min-height: calc(100vh - var(--header-height));
+    display: flex;
+    align-items: center;
+    padding: 3rem 0;
+    background:
+        radial-gradient(circle at 75% 30%, rgba(59, 130, 246, 0.12), transparent 35%),
+        radial-gradient(circle at 20% 80%, rgba(212, 175, 55, 0.08), transparent 30%),
+        linear-gradient(180deg, #0b1526 0%, var(--bg-dark) 100%);
+    border-bottom: 1px solid var(--border-color);
+}
+
+.hero-grid {
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    align-items: center;
+    gap: 3.5rem;
+}
+
+.hero-title {
+    font-size: clamp(2.5rem, 4.2vw, 3.8rem);
+    margin: 0.4rem 0 1rem;
+    font-weight: 600;
+}
+
+.hero-summary {
+    font-size: 1.1rem;
+    color: var(--text-muted);
+    margin-bottom: 2rem;
+    max-width: 580px;
+}
+
+.hero-actions {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+}
+
+.hero-visual {
+    display: flex;
+    justify-content: center;
+}
+
+.profile-frame {
+    width: min(100%, 400px);
+    aspect-ratio: 1 / 1;
+    border-radius: 50%;
+    padding: 1.2rem;
+    
+    /* Deeper antique gold tone blended into dark navy background */
+    background: linear-gradient(145deg, rgba(197, 160, 89, 0.75) 0%, rgba(179, 135, 40, 0.4) 50%, rgba(15, 23, 42, 0.8) 100%);
+    
+    /* Metallic Gold Solid Border */
+    border: 2px solid #c5a059;
+    
+    /* Concentrated Gold Glow */
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5), 
+                0 0 40px rgba(197, 160, 89, 0.3);
+}
+
+.profile-img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+    background-color: #0d1829;
+}
+
+/* Buttons */
+.cta-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.6rem;
+    padding: 0.85rem 1.6rem;
+    border-radius: 999px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    letter-spacing: 0.01em;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    cursor: pointer;
+}
+
+.primary-btn {
+    background: var(--gold-accent);
+    color: #08111f;
+    border: 1px solid var(--gold-accent);
+}
+
+.primary-btn:hover {
+    background: var(--gold-light);
+    border-color: var(--gold-light);
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(212, 175, 55, 0.2);
+}
+
+.secondary-btn {
+    background: rgba(255, 255, 255, 0.03);
+    color: var(--text-light);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.secondary-btn:hover {
+    background: rgba(255, 255, 255, 0.08);
+    border-color: var(--gold-accent);
+    color: var(--gold-accent);
+    transform: translateY(-3px);
+}
+
+/* ==========================================================================
+   Project Cards Section
+   ========================================================================== */
+.projects-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+    gap: 2rem;
+}
+
+.project-card {
+    background-color: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 16px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+    border-color: var(--border-glow);
+    background-color: var(--bg-card-hover);
+}
+
+.card-image-wrapper {
+    width: 100%;
+    height: 230px;
+    overflow: hidden;
+    position: relative;
+}
+
+.card-image-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.project-card:hover .card-image-wrapper img {
+    transform: scale(1.05);
+}
+
+.project-info {
+    padding: 1.8rem;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.tech-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+    margin-bottom: 1rem;
+}
+
+.tech-tag {
+    font-size: 0.72rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    padding: 0.25rem 0.65rem;
+    border-radius: 6px;
+    background: rgba(59, 130, 246, 0.12);
+    color: #60a5fa;
+    border: 1px solid rgba(59, 130, 246, 0.2);
+}
+
+.project-info h3 {
+    font-size: 1.6rem;
+    color: var(--text-light);
+    margin-bottom: 0.6rem;
+}
+
+.project-info p {
+    color: var(--text-muted);
+    font-size: 0.96rem;
+    line-height: 1.6;
+}
+
+/* ==========================================================================
+   Beyond The Code (Timeline)
+   ========================================================================== */
+.timeline {
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+}
+
+.timeline-item {
+    display: flex;
+    align-items: center;
+    gap: 2.5rem;
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 16px;
+    padding: 1.8rem;
+    opacity: 0;
+    transition: transform 1.3s cubic-bezier(0.16, 1, 0.3, 1), 
+                opacity 1.3s cubic-bezier(0.16, 1, 0.3, 1);
+    will-change: transform, opacity;
+}
+
+.timeline-item.slide-left {
+    transform: translateX(-60px);
+}
+
+.timeline-item.slide-right {
+    transform: translateX(60px);
+}
+
+.timeline-item.active {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.timeline-media {
+    flex: 0 0 190px;
+    height: 140px;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.timeline-media img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.timeline-content {
+    flex: 1;
+}
+
+.badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--gold-accent);
+    margin-bottom: 0.4rem;
+    font-weight: 600;
+}
+
+.timeline-content h3 {
+    font-size: 1.5rem;
+    margin-bottom: 0.4rem;
+}
+
+.timeline-content p {
+    color: var(--text-muted);
+    font-size: 0.96rem;
+}
+
+.timeline-item:hover {
+    background: var(--bg-card-hover);
+    border-color: var(--border-glow);
+}
+
+/* ==========================================================================
+   Personal Snapshot Card
+   ========================================================================== */
+/* Matching Beyond the Code Card Base */
+.personal-snapshot-card {
+    background-color: var(--card-bg, rgba(15, 23, 42, 0.6)); /* Dark navy glassmorphism */
+    border: 1px solid var(--card-border, rgba(255, 255, 255, 0.08));
+    border-radius: 16px;
+    padding: 2rem;
+    margin: 2.5rem 0;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.36);
+    
+    /* Smooth transition for hover state */
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+                border-color 0.4s ease,
+                box-shadow 0.4s ease;
+    will-change: transform, border-color, box-shadow;
+}
+
+/* Beyond the Code Hover Effect */
+.personal-snapshot-card:hover {
+    transform: translateY(-6px);
+    border-color: rgba(197, 160, 89, 0.4); /* Subtle metallic gold highlight on border */
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.5), 
+                0 0 20px rgba(197, 160, 89, 0.15); /* Soft outer gold glow */
+}
+
+/* Header & Icon Styling */
+.snapshot-header {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    margin-bottom: 1rem;
+}
+
+.snapshot-header h3 {
+    margin: 0;
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: #ffffff;
+}
+
+.snapshot-icon {
+    color: #c5a059; /* Metallic gold theme accent */
+    font-size: 1.4rem;
+}
+
+/* Quote Styling */
+.snapshot-quote {
+    margin: 0 0 1.5rem 0;
+    padding-left: 1rem;
+    border-left: 3px solid #c5a059;
+    font-style: italic;
+    color: var(--text-muted, #94a3b8);
+    font-size: 0.95rem;
+}
+
+/* List Layout & Hover Refinements */
+.snapshot-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.25rem;
+}
+
+.snapshot-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+    color: var(--text-muted, #cbd5e1);
+    font-size: 0.95rem;
+    line-height: 1.5;
+    transition: color 0.3s ease;
+}
+
+.snapshot-list li i {
+    color: #c5a059;
+    width: 20px;
+    text-align: center;
+    margin-top: 0.2rem;
+    font-size: 1.05rem;
+}
+
+.snapshot-list strong {
+    color: #ffffff;
+}
+
+/* Subtle item highlight on list hover */
+.snapshot-list li:hover {
+    color: #ffffff;
+}
+
+/* ==========================================================================
+   Call to Action Banner & Footer
+   ========================================================================== */
+.cta-banner {
+    background: linear-gradient(135deg, #0d1a30 0%, #172a4d 100%);
+    text-align: center;
+    padding: 5rem 1.5rem;
+    border-top: 1px solid var(--border-color);
+    border-bottom: 1px solid var(--border-color);
+    margin-top: 3rem;
+}
+
+.cta-banner h2 {
+    font-size: clamp(1.8rem, 3vw, 2.5rem);
+    max-width: 750px;
+    margin: 0.5rem auto 1rem;
+    color: var(--text-light);
+}
+
+.cta-banner p {
+    color: var(--text-muted);
+    font-size: 1.05rem;
+    margin-bottom: 2rem;
+}
+
+.contact-section {
+    text-align: center;
+    padding-top: 4rem;
+    padding-bottom: 3rem;
+}
+
+.contact-section h3 {
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+}
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 1.2rem;
+}
+
+.social-links a {
+    width: 46px;
+    height: 46px;
+    border-radius: 50%;
+    background-color: var(--bg-card);
+    border: 1px solid var(--border-color);
+    color: var(--text-light);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.1rem;
+    transition: all 0.25s ease;
+}
+
+.social-links a:hover {
+    background-color: var(--gold-accent);
+    color: #08111f;
+    border-color: var(--gold-accent);
+    transform: translateY(-4px);
+    box-shadow: 0 8px 16px rgba(212, 175, 55, 0.25);
+}
+
+.contact-email {
+    color: var(--gold-accent);
+    font-weight: 600;
+    font-size: 1.05rem;
+    margin-bottom: 1.5rem;
+}
+
+.copyright {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+}
+
+/* ==========================================================================
+   Responsive Styles
+   ========================================================================== */
+@media (max-width: 900px) {
+    .hero-grid {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+    }
+
+    .hero-copy {
+        text-align: center;
+    }
+
+    .hero-summary {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .hero-actions {
+        justify-content: center;
+    }
+
+    .hero-visual {
+        order: -1;
+    }
+
+    .profile-frame {
+        width: min(80vw, 320px);
+    }
+}
+
+@media (max-width: 768px) {
+    .site-header-inner {
+        flex-direction: column;
+        justify-content: center;
+        gap: 0.5rem;
+    }
+
+    .site-nav {
+        gap: 1.2rem;
+    }
+
+    .site-nav .nav-link {
+        font-size: 0.88rem;
+    }
+
+    .projects-container {
+        grid-template-columns: 1fr;
+    }
+
+    .timeline-item {
+        flex-direction: column;
+        text-align: center;
+        gap: 1.2rem;
+    }
+
+    .timeline-media {
+        width: 100%;
+        height: 180px;
+        flex: none;
+    }
+
+    .badge {
+        justify-content: center;
+    }
+}

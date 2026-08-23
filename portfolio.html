@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jemmanuel Que | Full-Stack Developer</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <!-- Custom CSS -->
+    <link href="style.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+
+    <!-- Primary Navigation -->
+    <header class="site-header" id="site-header">
+        <div class="container site-header-inner">
+            <a class="brand" href="#about" aria-label="Jemmanuel Que home">
+                <span class="brand-mark">JQ</span>
+                <span class="brand-name">Jemmanuel Que</span>
+            </a>
+
+            <nav class="site-nav" id="primary-navigation" aria-label="Primary Navigation">
+                <a href="#about" class="nav-link active">About</a>
+                <a href="#experience" class="nav-link">Experience</a>
+                <a href="#skills" class="nav-link">Skills</a>
+                <a href="#work" class="nav-link">Projects</a>
+                <a href="#contact" class="nav-link">Contact</a>
+            </nav>
+
+            <button class="menu-toggle" id="menu-toggle" type="button" aria-label="Toggle navigation" aria-expanded="false" aria-controls="primary-navigation">
+                <i class="fa-solid fa-bars" aria-hidden="true"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="about">
+        <div class="container hero-grid">
+            <div class="hero-copy">
+                <h1 class="hero-title">Hi! I'm <span class="highlight">Jemmanuel Que</span></h1>
+                <div class="hero-role-wrapper">
+                    <span class="role-prefix">&gt; </span>
+                    <span id="typewriter" class="typewriter-text"></span>
+                    <span class="cursor">|</span>
+                </div>
+                <p class="hero-summary">
+                    Full-Stack Web Developer specializing in backend logic, relational database design, and cloud deployment. Experienced in building secure web applications with PHP, MySQL, RESTful APIs, and AWS EC2 environments.
+                </p>
+
+                <div class="hero-actions">
+                    <a href="#work" class="cta-btn primary-btn"><i class="fa-solid fa-briefcase"></i> View Projects</a>
+                    <a href="https://drive.google.com/file/d/1jDYZn-vk1tWfvDY2NuyZoj1bpM3o4cJ7/view?usp=sharing" target="_blank" rel="noopener" class="cta-btn secondary-btn"><i class="fa-solid fa-file-pdf"></i> Resume PDF</a>
+                </div>
+            </div>
+
+            <div class="hero-visual">
+                <div class="profile-frame">
+                    <img src="me.png" alt="Jemmanuel Que - Full-Stack Developer" class="profile-img">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Professional Experience Section -->
+    <section class="section container" id="experience">
+        <div class="section-header">
+            <span class="eyebrow">Industry Track</span>
+            <h2 class="section-title">Experience</h2>
+        </div>
+
+        <div class="projects-container">
+            <article class="project-card" data-gallery-open="ojt" tabindex="0" role="button" aria-label="Open OJT system screenshots">
+                <div class="card-image-wrapper">
+                    <img src="ojt_student.png" alt="OJT E-Enrollment System student module interface" loading="lazy">
+                </div>
+                <div class="project-info">
+                    <div class="tech-tags">
+                        <span class="tech-tag">PHP</span>
+                        <span class="tech-tag">MySQL</span>
+                        <span class="tech-tag">Bootstrap</span>
+                        <span class="tech-tag">cURL</span>
+                        <span class="tech-tag">Git / GitHub</span>
+                    </div>
+                    <h3>On The Job Training - Full Stack Developer</h3>
+                    <p><strong>E-Enrollment System for City College of Calamba</strong> (Sept 2025 - Apr 2026)</p>
+                    <ul style="margin-top: 10px; padding-left: 20px; color: var(--text-muted, #9ca3af);">
+                        <li>Engineered core enrollment logic for Student and Dean modules, handling edge-case validation scenarios
+                        across real-time schedule-conflict detection, unit-load constraints, and concurrent section-capacity
+                        limits.</li>
+                        <li>Implemented atomic database transactions and concurrency-control mechanisms to prevent race
+                        conditions and enforce all-or-nothing execution during bulk Dean imports and prospectus creation,
+                        maintaining database consistency and integrity.</li>
+                        <li>Engineered a subject recommendation system based on academic and curriculum requirements, with granular Role-Based Access Control (RBAC) and JWT authentication for secure user access and permissions.</li>
+                        <li>Optimized database schemas and SQL queries, contributed to SDLC and system-flow documentation, and
+                        collaborated with developers through Git/GitHub workflows.</li>
+                    </ul>
+                </div>
+            </article>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section class="section container" id="skills">
+        <div class="section-header">
+            <span class="eyebrow">Core Stack</span>
+            <h2 class="section-title">Skills & Capabilities</h2>
+        </div>
+
+        <div class="skills-grid">
+            <article class="skill-card">
+                <div class="skill-card-header">
+                    <i class="fa-solid fa-server skill-icon"></i>
+                    <h3>Backend & DB</h3>
+                </div>
+                <ul class="skill-list">
+                    <li>PHP</li>
+                    <li>MySQL</li>
+                    <li>MariaDB</li>
+                    <li>Concurrency Control</li>
+                    <li>RESTful APIs</li>
+                    <li>JWT Auth</li>
+                </ul>
+            </article>
+
+            <article class="skill-card">
+                <div class="skill-card-header">
+                    <i class="fa-solid fa-code skill-icon"></i>
+                    <h3>Frontend</h3>
+                </div>
+                <ul class="skill-list">
+                    <li>JavaScript (ES6+)</li>
+                    <li>HTML5 / CSS3</li>
+                    <li>Bootstrap</li>
+                </ul>
+            </article>
+
+            <article class="skill-card">
+                <div class="skill-card-header">
+                    <i class="fa-solid fa-cloud skill-icon"></i>
+                    <h3>Cloud & DevOps</h3>
+                </div>
+                <ul class="skill-list">
+                    <li>AWS EC2 (Linux)</li>
+                    <li>Apache / Nginx</li>
+                    <li>cPanel Hosting</li>
+                    <li>SSH Workflows</li>
+                </ul>
+            </article>
+
+            <article class="skill-card">
+                <div class="skill-card-header">
+                    <i class="fa-solid fa-screwdriver-wrench skill-icon"></i>
+                    <h3>Tools & Testing</h3>
+                </div>
+                <ul class="skill-list">
+                    <li>Git / GitHub</li>
+                    <li>Python Automation</li>
+                    <li>Playwright QA</li>
+                    <li>VS Code / XAMPP</li>
+                </ul>
+            </article>
+        </div>
+    </section>
+
+    <!-- Featured Projects Section -->
+    <section class="section container" id="work">
+        <div class="section-header">
+            <span class="eyebrow">Projects</span>
+            <h2 class="section-title">Tailored strategies for operational impact.</h2>
+        </div>
+
+        <div class="projects-container">
+            <!-- Project 1 -->
+            <article class="project-card" data-gallery-open="hris" tabindex="0" role="button" aria-label="Open HRIS screenshots">
+                <div class="card-image-wrapper">
+                    <img src="hris_facial_recog.png" alt="Human Resource Information System dashboard interface" loading="lazy">
+                </div>
+                <div class="project-info" data-project="hris">
+                    <div class="tech-tags">
+                        <span class="tech-tag">face-api.js</span>
+                        <span class="tech-tag">Geolocation API</span>
+                        <span class="tech-tag">AWS EC2 (Linux)</span>
+                        <span class="tech-tag">PHP & MySQL</span>
+                        <span class="tech-tag">Bootstrap</span>
+                        <span class="tech-tag">RBAC</span>
+                    </div>
+                    <h3>HRIS with Facial Recognition & GPS — Thesis Leader (2025)</h3>
+                    <ul style="margin-top: 10px; padding-left: 20px; color: var(--text-muted, #9ca3af);">
+                        <li>Led the end-to-end development of an HRIS, automating payroll processing and attendance tracking for
+                        272 security personnel across multiple locations and 11 administrative staff.</li>
+                        <li>Engineered multi-layer attendance verification using face-api.js for facial recognition and the Browser
+                        Geolocation API for GPS-based geofencing, reducing the risk of unauthorized attendance logging and
+                        buddy punching.</li>
+                        <li>Designed the relational database schema, implemented granular Role-Based Access Control (RBAC), and
+                        configured an AWS EC2 Linux environment with Git/SSH-based deployment workflows for seamless code
+                        synchronization.</li>
+                        <li>Spearheaded project management and technical documentation, authoring system flowcharts, data flow
+                        diagrams (DFDs), and comprehensive system evaluation reports.</li>
+                    </ul>
+                </div>
+            </article>
+
+            <!-- Project 2 -->
+            <article class="project-card" data-gallery-open="inventory" tabindex="0" role="button" aria-label="Open inventory system screenshots">
+                <div class="card-image-wrapper">
+                    <img src="inventory_dashboard.png" alt="Inventory Management System interface screenshot" loading="lazy">
+                </div>
+                <div class="project-info" data-project="inventory">
+                    <div class="tech-tags">
+                        <span class="tech-tag">PHP</span>
+                        <span class="tech-tag">MySQL</span>
+                        <span class="tech-tag">Bootstrap</span>
+                        <span class="tech-tag">cPanel Deployment</span>
+                    </div>
+                    <h3>Inventory Management System — Project Leader (2024)</h3>
+                    <ul style="margin-top: 10px; padding-left: 20px; color: var(--text-muted, #9ca3af);">
+                        <li>Engineered an automated stock tracking system for Pondpro Aquafarms.</li>
+                        <li>Implemented real-time stock monitoring, data validation, and interactive analytics dashboards.</li>
+                        <li>Built role-based permissions (Admin, Manager, Operator) and deployed on cPanel production hosting.</li>
+                    </ul>
+                </div>
+            </article>
+        </div>
+    </section>
+    
+    <!-- Call to Action Banner -->
+    <section class="cta-banner">
+        <div class="container">
+            <span class="eyebrow light">Let's Connect</span>
+            <h2>Transforming operational challenges into automated, reliable software.</h2>
+            <p>Facing technical bottlenecks or launching a new web platform? Let's engineer a solution together.</p>
+            <a href="mailto:jemmanuelque629@gmail.com" class="cta-btn primary-btn"><i class="fa-solid fa-paper-plane"></i> Get In Touch</a>
+        </div>
+    </section>
+
+    <!-- Footer / Contact Section -->
+    <footer class="contact-section container" id="contact">
+        <h3>Connect With Me</h3>
+        <div class="social-links">
+            <a href="https://github.com/Jemmanuel-Que-629" target="_blank" rel="noopener" aria-label="GitHub"><i class="fab fa-github"></i></a>
+            <a href="https://linkedin.com/in/jemmanuel-cyril-que-a85440387" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+            <a href="https://www.upwork.com/freelancers/~01d7bfe6242fd70725" target="_blank" rel="noopener" aria-label="Upwork"><i class="fab fa-upwork"></i></a>
+            <a href="https://www.facebook.com/jc.que.29" target="_blank" rel="noopener" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+        </div>
+        <p class="contact-email">jemmanuelque629@gmail.com</p>
+        <p class="copyright">&copy; 2026 Jemmanuel Que. Built with purpose and precision.</p>
+    </footer>
+
+    <div class="gallery-modal" id="gallery-modal" aria-hidden="true" role="dialog" aria-label="Project screenshots">
+        <div class="gallery-backdrop" data-gallery-close="true"></div>
+        <div class="gallery-dialog" role="document">
+            <button class="gallery-close" type="button" aria-label="Close preview" data-gallery-close="true">
+                <i class="fa-solid fa-xmark" aria-hidden="true"></i>
+            </button>
+
+            <div class="gallery-media-wrap">
+                <button class="gallery-nav prev" type="button" aria-label="Previous screenshot" id="gallery-prev">
+                    <i class="fa-solid fa-chevron-left" aria-hidden="true"></i>
+                </button>
+
+                <img id="gallery-image" class="gallery-image" src="" alt="Project screenshot preview">
+
+                <button class="gallery-nav next" type="button" aria-label="Next screenshot" id="gallery-next">
+                    <i class="fa-solid fa-chevron-right" aria-hidden="true"></i>
+                </button>
+            </div>
+
+            <div class="gallery-meta">
+                <h4 id="gallery-title"></h4>
+                <p id="gallery-caption"></p>
+                <span id="gallery-count"></span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Custom Script -->
+    <script src="script.js"></script>
+</body>
+</html>

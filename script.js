@@ -1,28 +1,252 @@
 document.addEventListener("DOMContentLoaded", () => {
-    // 1. Scroll-driven timeline animations (Slower & Staggered)
-    const animatedItems = document.querySelectorAll(".timeline-item");
+    const galleries = {
+        ojt: {
+            title: "OJT - E-Enrollment System",
+            images: [
+                { src: "ojt_student.png", caption: "Student Enrollment Module" },
+                { src: "ojt_presentation1.png", caption: "From Left to Right [Payong, Dr. Dela Torre(supervisor), Me, Opeña]. Presentation of overall progress to our suprevisor. Febuary 27, 2026." },
+                { src: "ojt_presentation2.png", caption: "December 11, 2025. System Presentation, Flowchart Presentation and Discussion with Dean and Professors." }
+            ]
+        },
+        hris: {
+            title: "HRIS with Facial Recognition & GPS",
+            images: [
+                { src: "hris_facial_recog.png", caption: "Facial Recognition Attendance" },
+                { src: "hris_employee_masterlist.png", caption: "Employee Masterlist" },
+                { src: "hris_payroll.png", caption: "Payroll Processing" },
+                { src: "hris_leave_request.png", caption: "Leave Request Module" },
+                { src: "hris_performance_eval.png", caption: "Performance Evaluation" },
+                { src: "hris_client_eval.png", caption: "Client Evaluation" },
+                { src: "hris_panel.png", caption: "Left to right [Dr. Dela Torre, Banal(panel) ,Dr. Almonte(lead panel), Dr. Elomina(panel), Lanuza(guest panel), Me, Palafox, Rosario, Escaño" },
+                { src: "hris_adviser.png", caption: "With our thesis adviser Professor Llanderal." },
+                { src: "hris_turnover.png", caption: "System Turnover" }
+            ]
+        },
+        inventory: {
+            title: "Inventory Management System",
+            images: [
+                { src: "inventory_dashboard.png", caption: "Inventory Dashboard" },
+                { src: "inventory_livestocks.png", caption: "Livestock Inventory" },
+                { src: "inventory_consumable_nonconsumable.png", caption: "Consumable and Non-Consumable Items" },
+                { src: "inventory_client_consultation.png", caption: "Client Consultation Tracking" }
+            ]
+        }
+    };
 
-    if (animatedItems.length > 0) {
-        const observerOptions = {
-            root: null,
-            threshold: 0.15, // Trigger slightly earlier for smoother entry
-            rootMargin: "0px 0px -50px 0px"
-        };
+    const galleryModal = document.getElementById("gallery-modal");
+    const galleryImage = document.getElementById("gallery-image");
+    const galleryTitle = document.getElementById("gallery-title");
+    const galleryCaption = document.getElementById("gallery-caption");
+    const galleryCount = document.getElementById("gallery-count");
+    const galleryPrev = document.getElementById("gallery-prev");
+    const galleryNext = document.getElementById("gallery-next");
 
-        const scrollObserver = new IntersectionObserver((entries, observer) => {
-            entries.forEach((entry, index) => {
+    let activeGallery = null;
+    let activeIndex = 0;
+
+    const updateGalleryView = () => {
+        if (!activeGallery || !galleryImage) {
+            return;
+        }
+
+        const gallery = galleries[activeGallery];
+        const item = gallery.images[activeIndex];
+
+        galleryImage.src = item.src;
+        galleryImage.alt = `${gallery.title} - ${item.caption}`;
+        if (galleryTitle) {
+            galleryTitle.textContent = gallery.title;
+        }
+        if (galleryCaption) {
+            galleryCaption.textContent = item.caption;
+        }
+        if (galleryCount) {
+            galleryCount.textContent = `${activeIndex + 1} / ${gallery.images.length}`;
+        }
+    };
+
+    const openGallery = projectKey => {
+        if (!galleries[projectKey] || !galleryModal) {
+            return;
+        }
+
+        activeGallery = projectKey;
+        activeIndex = 0;
+        updateGalleryView();
+
+        galleryModal.classList.add("open");
+        galleryModal.setAttribute("aria-hidden", "false");
+        document.body.style.overflow = "hidden";
+    };
+
+    const closeGallery = () => {
+        if (!galleryModal) {
+            return;
+        }
+
+        galleryModal.classList.remove("open");
+        galleryModal.setAttribute("aria-hidden", "true");
+        document.body.style.overflow = "";
+        activeGallery = null;
+    };
+
+    const moveGallery = direction => {
+        if (!activeGallery) {
+            return;
+        }
+
+        const imageCount = galleries[activeGallery].images.length;
+        activeIndex = (activeIndex + direction + imageCount) % imageCount;
+        updateGalleryView();
+    };
+
+    document.querySelectorAll(".project-card[data-gallery-open]").forEach(card => {
+        card.addEventListener("click", () => {
+            const projectKey = card.getAttribute("data-gallery-open");
+            openGallery(projectKey);
+        });
+
+        card.addEventListener("keydown", event => {
+            if (event.key === "Enter" || event.key === " ") {
+                event.preventDefault();
+                const projectKey = card.getAttribute("data-gallery-open");
+                openGallery(projectKey);
+            }
+        });
+    });
+
+    document.querySelectorAll("[data-gallery-close]").forEach(closeTarget => {
+        closeTarget.addEventListener("click", closeGallery);
+    });
+
+    if (galleryPrev) {
+        galleryPrev.addEventListener("click", () => moveGallery(-1));
+    }
+    if (galleryNext) {
+        galleryNext.addEventListener("click", () => moveGallery(1));
+    }
+
+    const menuToggle = document.getElementById("menu-toggle");
+    const mobileNav = document.getElementById("primary-navigation");
+
+    if (menuToggle && mobileNav) {
+        menuToggle.addEventListener("click", () => {
+            const isOpen = mobileNav.classList.toggle("open");
+            menuToggle.setAttribute("aria-expanded", String(isOpen));
+
+            const icon = menuToggle.querySelector("i");
+            if (icon) {
+                icon.classList.toggle("fa-bars", !isOpen);
+                icon.classList.toggle("fa-xmark", isOpen);
+            }
+        });
+
+        mobileNav.querySelectorAll(".nav-link").forEach(link => {
+            link.addEventListener("click", () => {
+                mobileNav.classList.remove("open");
+                menuToggle.setAttribute("aria-expanded", "false");
+
+                const icon = menuToggle.querySelector("i");
+                if (icon) {
+                    icon.classList.add("fa-bars");
+                    icon.classList.remove("fa-xmark");
+                }
+            });
+        });
+
+        document.addEventListener("click", event => {
+            if (!mobileNav.classList.contains("open") || window.innerWidth > 768) {
+                return;
+            }
+
+            const clickedInsideNav = mobileNav.contains(event.target);
+            const clickedToggle = menuToggle.contains(event.target);
+
+            if (!clickedInsideNav && !clickedToggle) {
+                mobileNav.classList.remove("open");
+                menuToggle.setAttribute("aria-expanded", "false");
+
+                const icon = menuToggle.querySelector("i");
+                if (icon) {
+                    icon.classList.add("fa-bars");
+                    icon.classList.remove("fa-xmark");
+                }
+            }
+        });
+
+        document.addEventListener("keydown", event => {
+            if (event.key === "Escape" && activeGallery) {
+                closeGallery();
+                return;
+            }
+
+            if (event.key === "Escape" && mobileNav.classList.contains("open")) {
+                mobileNav.classList.remove("open");
+                menuToggle.setAttribute("aria-expanded", "false");
+
+                const icon = menuToggle.querySelector("i");
+                if (icon) {
+                    icon.classList.add("fa-bars");
+                    icon.classList.remove("fa-xmark");
+                }
+            }
+
+            if (activeGallery && event.key === "ArrowLeft") {
+                moveGallery(-1);
+            }
+
+            if (activeGallery && event.key === "ArrowRight") {
+                moveGallery(1);
+            }
+        });
+
+        window.addEventListener("resize", () => {
+            if (window.innerWidth > 768) {
+                mobileNav.classList.remove("open");
+                menuToggle.setAttribute("aria-expanded", "false");
+
+                const icon = menuToggle.querySelector("i");
+                if (icon) {
+                    icon.classList.add("fa-bars");
+                    icon.classList.remove("fa-xmark");
+                }
+            }
+        });
+    }
+
+    // 1. Left-right reveal animation for cards while scrolling
+    const revealItems = document.querySelectorAll(".project-card, .skill-card");
+    const isDesktop = window.matchMedia("(min-width: 769px)").matches;
+
+    if (revealItems.length > 0) {
+        const revealObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
                 if (entry.isIntersecting) {
-                    // Optional slight stagger delay for consecutive items
-                    setTimeout(() => {
-                        entry.target.classList.add("active");
-                    }, 100);
-
+                    entry.target.classList.add("reveal-visible");
                     observer.unobserve(entry.target);
                 }
             });
-        }, observerOptions);
+        }, {
+            root: null,
+            threshold: 0.2,
+            rootMargin: "0px 0px -60px 0px"
+        });
 
-        animatedItems.forEach(item => scrollObserver.observe(item));
+        revealItems.forEach((item, index) => {
+            item.classList.add("reveal-on-scroll");
+            item.classList.add(index % 2 === 0 ? "reveal-left" : "reveal-right");
+
+            if (isDesktop && item.parentElement) {
+                const siblingSelector = item.classList.contains("project-card") ? ".project-card" : ".skill-card";
+                const siblingItems = Array.from(item.parentElement.querySelectorAll(siblingSelector));
+                const staggerIndex = siblingItems.indexOf(item);
+                item.style.transitionDelay = `${Math.max(0, staggerIndex) * 110}ms`;
+            } else {
+                item.style.transitionDelay = "0ms";
+            }
+
+            revealObserver.observe(item);
+        });
     }
 
     // 2. Active Header Navigation Link Highlighting on Scroll
@@ -65,7 +289,6 @@ const roles = [
     "Full-Stack Developer",
     "AWS EC2 Deployment Specialist",
     "Software Engineer",
-    "Manual QA & Tester",
     "Civil Service Professional Passer",
 ];
 

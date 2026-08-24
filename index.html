@@ -28,9 +28,9 @@
 
             <nav class="site-nav" id="primary-navigation" aria-label="Primary Navigation">
                 <a href="#about" class="nav-link active">About</a>
+                <a href="#work" class="nav-link">Featured Systems</a>
                 <a href="#experience" class="nav-link">Experience</a>
                 <a href="#skills" class="nav-link">Skills</a>
-                <a href="#work" class="nav-link">Projects</a>
                 <a href="#contact" class="nav-link">Contact</a>
             </nav>
 
@@ -51,12 +51,12 @@
                     <span class="cursor">|</span>
                 </div>
                 <p class="hero-summary">
-                    Full-Stack Web Developer specializing in backend logic, relational database design, and cloud deployment. Experienced in building secure web applications with PHP, MySQL, RESTful APIs, and AWS EC2 environments.
+                    Full-Stack Software Engineer & AWS Cloud Specialist. I build secure, high-concurrency backend systems, automated workflows, and cloud infrastructure that scale.
                 </p>
 
                 <div class="hero-actions">
-                    <a href="#work" class="cta-btn primary-btn"><i class="fa-solid fa-briefcase"></i> View Projects</a>
-                    <a href="https://drive.google.com/file/d/1jDYZn-vk1tWfvDY2NuyZoj1bpM3o4cJ7/view?usp=sharing" target="_blank" rel="noopener" class="cta-btn secondary-btn"><i class="fa-solid fa-file-pdf"></i> Resume PDF</a>
+                    <a href="#work" class="cta-btn primary-btn"><i class="fa-solid fa-briefcase"></i> View Featured Systems</a>
+                    <a href="https://drive.google.com/file/d/1HKlhHbpNMeUr0ah3O_MdEgN134WhqmT_/view?usp=sharing" target="_blank" rel="noopener" class="cta-btn secondary-btn"><i class="fa-solid fa-file-pdf"></i> Resume PDF</a>
                 </div>
             </div>
 
@@ -68,11 +68,62 @@
         </div>
     </section>
 
+    <!-- Featured Systems / Projects Section -->
+    <section class="section container" id="work">
+        <div class="section-header">
+            <span class="eyebrow">Flagship Work</span>
+            <h2 class="section-title">Featured Systems</h2>
+        </div>
+
+        <div class="projects-container">
+            <!-- Project 1: HRIS -->
+            <article class="project-card" data-gallery-open="hris" tabindex="0" role="button" aria-label="Open HRIS screenshots">
+                <div class="card-image-wrapper">
+                    <img src="hris_facial_recog.png" alt="Human Resource Information System dashboard interface" loading="lazy">
+                </div>
+                <div class="project-info" data-project="hris">
+                    <div class="tech-tags">
+                        <span class="tech-tag">Face Recognition Framework</span>
+                        <span class="tech-tag">GPS Geofencing</span>
+                        <span class="tech-tag">AWS Web Hosting</span>
+                        <span class="tech-tag">Payroll & Attendance Automation</span>
+                        <span class="tech-tag">RBAC</span>
+                        <span class="tech-tag">PHP & MySQL</span>
+                    </div>
+                    <h3>HRIS with Facial Recognition & GPS — Thesis Leader (2025)</h3>
+                    <p style="margin-top: 10px; color: var(--text-muted, #9ca3af); line-height: 1.6;">
+                        Architected and deployed a cloud-hosted HRIS on AWS EC2 Linux that automated payroll and attendance tracking for 272 security personnel and 11 admin staff. Implemented multi-factor biometric face recognition, GPS geofencing, granular RBAC permissions, and automated Git/SSH deployment workflows to prevent attendance fraud and streamline administration.
+                    </p>
+                </div>
+            </article>
+
+            <!-- Project 2: Inventory System -->
+            <article class="project-card" data-gallery-open="inventory" tabindex="0" role="button" aria-label="Open inventory system screenshots">
+                <div class="card-image-wrapper">
+                    <img src="inventory_dashboard.png" alt="Inventory Management System interface screenshot" loading="lazy">
+                </div>
+                <div class="project-info" data-project="inventory">
+                    <div class="tech-tags">
+                        <span class="tech-tag">Stock Monitoring Dashboard</span>
+                        <span class="tech-tag">Automated Stock Alerts</span>
+                        <span class="tech-tag">RBAC (Admin, Manager, Operator)</span>
+                        <span class="tech-tag">cPanel Web Hosting</span>
+                        <span class="tech-tag">PHP & MySQL</span>
+                    </div>
+                    <h3>Inventory Management System — Project Leader (2024)</h3>
+                    <p style="margin-top: 10px; color: var(--text-muted, #9ca3af); line-height: 1.6;">
+                        Engineered an automated stock tracking solution for Pondpro Aquafarms featuring live data validation, real-time inventory health dashboards, and role-based access control (Admin, Manager, Operator) deployed on cPanel web hosting.
+                    </p>
+                </div>
+            </article>
+        </div>
+    </section>
+
     <!-- Professional Experience Section -->
     <section class="section container" id="experience">
         <div class="section-header">
-            <span class="eyebrow">Industry Track</span>
-            <h2 class="section-title">Experience</h2>
+            <span class="eyebrow">Industry Experience</span>
+            <h2 class="section-title">OJT Engineering Impact</h2>
         </div>
 
         <div class="projects-container">
@@ -82,25 +133,17 @@
                 </div>
                 <div class="project-info">
                     <div class="tech-tags">
-                        <span class="tech-tag">PHP</span>
-                        <span class="tech-tag">MySQL</span>
-                        <span class="tech-tag">Bootstrap</span>
-                        <span class="tech-tag">cURL</span>
-                        <span class="tech-tag">Git / GitHub</span>
+                        <span class="tech-tag">Subject Recommendation Engine</span>
+                        <span class="tech-tag">Concurrency Control & Atomic Transactions</span>
+                        <span class="tech-tag">Real-Time Schedule Conflict Detection</span>
+                        <span class="tech-tag">RBAC & JWT Auth</span>
+                        <span class="tech-tag">PHP & MySQL</span>
                     </div>
                     <h3>On The Job Training - Full Stack Developer</h3>
-                    <p><strong>E-Enrollment System for City College of Calamba</strong> (Sept 2025 - Apr 2026)</p>
-                    <ul style="margin-top: 10px; padding-left: 20px; color: var(--text-muted, #9ca3af);">
-                        <li>Engineered core enrollment logic for Student and Dean modules, handling edge-case validation scenarios
-                        across real-time schedule-conflict detection, unit-load constraints, and concurrent section-capacity
-                        limits.</li>
-                        <li>Implemented atomic database transactions and concurrency-control mechanisms to prevent race
-                        conditions and enforce all-or-nothing execution during bulk Dean imports and prospectus creation,
-                        maintaining database consistency and integrity.</li>
-                        <li>Engineered a subject recommendation system based on academic and curriculum requirements, with granular Role-Based Access Control (RBAC) and JWT authentication for secure user access and permissions.</li>
-                        <li>Optimized database schemas and SQL queries, contributed to SDLC and system-flow documentation, and
-                        collaborated with developers through Git/GitHub workflows.</li>
-                    </ul>
+                    <p style="margin-top: 4px; font-weight: 500;"><strong>E-Enrollment System for City College of Calamba</strong> (Sept 2025 - Apr 2026)</p>
+                    <p style="margin-top: 10px; color: var(--text-muted, #9ca3af); line-height: 1.6;">
+                        Developed core enrollment logic for Student and Dean modules, integrating real-time schedule conflict validation, unit-load checks, and capacity constraints. Implemented atomic database transactions, concurrency control to prevent race conditions during bulk updates, and a curriculum-based subject recommendation engine secured by JWT authentication and RBAC.
+                    </p>
                 </div>
             </article>
         </div>
@@ -109,30 +152,29 @@
     <!-- Skills Section -->
     <section class="section container" id="skills">
         <div class="section-header">
-            <span class="eyebrow">Core Stack</span>
-            <h2 class="section-title">Skills & Capabilities</h2>
+            <span class="eyebrow">Capabilities</span>
+            <h2 class="section-title">Technical Stack</h2>
         </div>
 
         <div class="skills-grid">
             <article class="skill-card">
                 <div class="skill-card-header">
                     <i class="fa-solid fa-server skill-icon"></i>
-                    <h3>Backend & DB</h3>
+                    <h3>Backend & Architecture</h3>
                 </div>
                 <ul class="skill-list">
-                    <li>PHP</li>
-                    <li>MySQL</li>
-                    <li>MariaDB</li>
-                    <li>Concurrency Control</li>
-                    <li>RESTful APIs</li>
-                    <li>JWT Auth</li>
+                    <li>PHP (Core & OOP)</li>
+                    <li>MySQL / MariaDB</li>
+                    <li>Concurrency Control & Atomic Transactions</li>
+                    <li>RESTful APIs & JWT Auth</li>
+                    <li>RBAC Security Architecture</li>
                 </ul>
             </article>
 
             <article class="skill-card">
                 <div class="skill-card-header">
                     <i class="fa-solid fa-code skill-icon"></i>
-                    <h3>Frontend</h3>
+                    <h3>Frontend & UI</h3>
                 </div>
                 <ul class="skill-list">
                     <li>JavaScript (ES6+)</li>
@@ -144,13 +186,13 @@
             <article class="skill-card">
                 <div class="skill-card-header">
                     <i class="fa-solid fa-cloud skill-icon"></i>
-                    <h3>Cloud & DevOps</h3>
+                    <h3>Cloud & Hosting</h3>
                 </div>
                 <ul class="skill-list">
-                    <li>AWS EC2 (Linux)</li>
-                    <li>Apache / Nginx</li>
+                    <li>AWS Web Hosting (EC2 Linux)</li>
+                    <li>Apache / Nginx Web Servers</li>
                     <li>cPanel Hosting</li>
-                    <li>SSH Workflows</li>
+                    <li>SSH & Git Deployment Workflows</li>
                 </ul>
             </article>
 
@@ -160,82 +202,21 @@
                     <h3>Tools & Testing</h3>
                 </div>
                 <ul class="skill-list">
-                    <li>Git / GitHub</li>
-                    <li>Python Automation</li>
-                    <li>Playwright QA</li>
+                    <li>Git / GitHub Workflows</li>
+                    <li>Python Automation Scripting</li>
+                    <li>Playwright Automated Testing</li>
                     <li>VS Code / XAMPP</li>
                 </ul>
             </article>
         </div>
     </section>
 
-    <!-- Featured Projects Section -->
-    <section class="section container" id="work">
-        <div class="section-header">
-            <span class="eyebrow">Projects</span>
-            <h2 class="section-title">Tailored strategies for operational impact.</h2>
-        </div>
-
-        <div class="projects-container">
-            <!-- Project 1 -->
-            <article class="project-card" data-gallery-open="hris" tabindex="0" role="button" aria-label="Open HRIS screenshots">
-                <div class="card-image-wrapper">
-                    <img src="hris_facial_recog.png" alt="Human Resource Information System dashboard interface" loading="lazy">
-                </div>
-                <div class="project-info" data-project="hris">
-                    <div class="tech-tags">
-                        <span class="tech-tag">face-api.js</span>
-                        <span class="tech-tag">Geolocation API</span>
-                        <span class="tech-tag">AWS EC2 (Linux)</span>
-                        <span class="tech-tag">PHP & MySQL</span>
-                        <span class="tech-tag">Bootstrap</span>
-                        <span class="tech-tag">RBAC</span>
-                    </div>
-                    <h3>HRIS with Facial Recognition & GPS — Thesis Leader (2025)</h3>
-                    <ul style="margin-top: 10px; padding-left: 20px; color: var(--text-muted, #9ca3af);">
-                        <li>Led the end-to-end development of an HRIS, automating payroll processing and attendance tracking for
-                        272 security personnel across multiple locations and 11 administrative staff.</li>
-                        <li>Engineered multi-layer attendance verification using face-api.js for facial recognition and the Browser
-                        Geolocation API for GPS-based geofencing, reducing the risk of unauthorized attendance logging and
-                        buddy punching.</li>
-                        <li>Designed the relational database schema, implemented granular Role-Based Access Control (RBAC), and
-                        configured an AWS EC2 Linux environment with Git/SSH-based deployment workflows for seamless code
-                        synchronization.</li>
-                        <li>Spearheaded project management and technical documentation, authoring system flowcharts, data flow
-                        diagrams (DFDs), and comprehensive system evaluation reports.</li>
-                    </ul>
-                </div>
-            </article>
-
-            <!-- Project 2 -->
-            <article class="project-card" data-gallery-open="inventory" tabindex="0" role="button" aria-label="Open inventory system screenshots">
-                <div class="card-image-wrapper">
-                    <img src="inventory_dashboard.png" alt="Inventory Management System interface screenshot" loading="lazy">
-                </div>
-                <div class="project-info" data-project="inventory">
-                    <div class="tech-tags">
-                        <span class="tech-tag">PHP</span>
-                        <span class="tech-tag">MySQL</span>
-                        <span class="tech-tag">Bootstrap</span>
-                        <span class="tech-tag">cPanel Deployment</span>
-                    </div>
-                    <h3>Inventory Management System — Project Leader (2024)</h3>
-                    <ul style="margin-top: 10px; padding-left: 20px; color: var(--text-muted, #9ca3af);">
-                        <li>Engineered an automated stock tracking system for Pondpro Aquafarms.</li>
-                        <li>Implemented real-time stock monitoring, data validation, and interactive analytics dashboards.</li>
-                        <li>Built role-based permissions (Admin, Manager, Operator) and deployed on cPanel production hosting.</li>
-                    </ul>
-                </div>
-            </article>
-        </div>
-    </section>
-    
     <!-- Call to Action Banner -->
     <section class="cta-banner">
         <div class="container">
             <span class="eyebrow light">Let's Connect</span>
-            <h2>Transforming operational challenges into automated, reliable software.</h2>
-            <p>Facing technical bottlenecks or launching a new web platform? Let's engineer a solution together.</p>
+            <h2>Transforming complex operational bottlenecks into secure, automated software.</h2>
+            <p>Looking for a backend-focused developer who knows database integrity, AWS hosting, and system architecture? Let's talk.</p>
             <a href="mailto:jemmanuelque629@gmail.com" class="cta-btn primary-btn"><i class="fa-solid fa-paper-plane"></i> Get In Touch</a>
         </div>
     </section>
@@ -250,7 +231,7 @@
             <a href="https://www.facebook.com/jc.que.29" target="_blank" rel="noopener" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
         </div>
         <p class="contact-email">jemmanuelque629@gmail.com</p>
-        <p class="copyright">&copy; 2026 Jemmanuel Que. Built with purpose and precision.</p>
+        <p class="copyright">&copy; 2026 Jemmanuel Que. Civil Service Professional Passer (84.21%).</p>
     </footer>
 
     <div class="gallery-modal" id="gallery-modal" aria-hidden="true" role="dialog" aria-label="Project screenshots">
